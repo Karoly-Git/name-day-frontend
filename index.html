@@ -5,160 +5,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="description"
-        content="Name Day API provides name day data for various months of Hungary and Poland. Easily retrieve information using this API." />
+        content="Name Day API provides name-day data for Poland and Hungary. Retrieve name days by month, date, and country via a RESTful API." />
     <meta name="author" content="Karoly Hornyak" />
+
     <script defer src="./script.js"></script>
     <link rel="stylesheet" href="./styles.css">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <title>Name Day API Documentation</title>
+
+    <title>Name Day Backend API Documentation</title>
 </head>
 
 <body>
     <header>
-        <h1>Name Day API Documentation</h1>
+        <h1>Name Day Backend API Documentation</h1>
     </header>
 
     <div class="container">
         <p>
-            Welcome to the Name Day API documentation. This API provides name day data for various months of Hungary and
-            Poland.
-            Name days are special days in some cultures where individuals celebrate their given names based on a
-            calendar of saints or historical figures.
+            Welcome to the Name Day Backend API documentation. This RESTful API provides international name-day data
+            for Poland and Hungary. Name days are traditionally celebrated in many European cultures and are based
+            on historical calendars and saints.
         </p>
 
         <h2>1. Base URL</h2>
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/">https://nameday-b9bd663a9ed7.herokuapp.com/</a>
+<a class="code-attr-name" target="_blank"
+    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+</a>
                 </code>
             </div>
         </div>
 
-        <h2>2. Endpoints</h2>
+        <h2>2. API Endpoints</h2>
 
+        <!-- ALL -->
         <div class="block-wrapper">
             <h3>Get All Name Days</h3>
             <ul>
                 <li><strong>Endpoint:</strong> <code class="inline-code">/</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for all months and countries.</li>
+                <li><strong>Description:</strong> Retrieve name-day data for all months and supported countries.</li>
                 <li><strong>Example Request:</strong>
                     <div class="code-block">
                         <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/">https://nameday-b9bd663a9ed7.herokuapp.com/</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"january"</span>: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr-name">"1"</span>: { <span class="code-attr-name">"hu"</span>: [<span class="code-attr-value">"Fruzsina"</span>], <span class="code-attr-name">"pl"</span>: [<span class="code-attr-value">"Mieczysław"</span>, <span class="code-attr-value">"Mieczysława"</span>, <span class="code-attr-value">"Mieszko"</span>] },<br>
-&nbsp;&nbsp;&nbsp;&nbsp;...<br>
-&nbsp;&nbsp;}<br>
-}
+<a class="code-attr-name" target="_blank"
+    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+</a>
                         </code>
                     </div>
                 </li>
             </ul>
         </div>
 
+        <!-- MONTH -->
         <div class="block-wrapper">
             <h3>Get Name Days by Month</h3>
             <ul>
                 <li><strong>Endpoint:</strong> <code class="inline-code">/:month</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for a specific month.</li>
-                <li><strong>Parameters:</strong> <code class="inline-code">month</code> (string): The name of the month
-                    in lowercase (e.g., "january").</li>
+                <li><strong>Description:</strong> Retrieve name-day data for a specific month.</li>
+                <li><strong>Parameter:</strong>
+                    <code class="inline-code">month</code> — lowercase month name (e.g. <em>january</em>)
+                </li>
                 <li><strong>Example Request:</strong>
                     <div class="code-block">
                         <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/january">https://nameday-b9bd663a9ed7.herokuapp.com/january</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"1"</span>: { <span class="code-attr-name">"hu"</span>: [<span class="code-attr-value">"Fruzsina"</span>], <span class="code-attr-name">"pl"</span>: [<span class="code-attr-value">"Mieczysław"</span>, <span class="code-attr-value">"Mieczysława"</span>, <span class="code-attr-value">"Mieszko"</span>] },<br>
-&nbsp;&nbsp;...<br>
-}
+<a class="code-attr-name" target="_blank"
+    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/january">https://name-day-backend-0d74dcea0ed2.herokuapp.com/january
+</a>
                         </code>
                     </div>
                 </li>
             </ul>
         </div>
 
+        <!-- MONTH + DATE -->
         <div class="block-wrapper">
             <h3>Get Name Days by Month and Date</h3>
             <ul>
                 <li><strong>Endpoint:</strong> <code class="inline-code">/:month/:date</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for a specific day within a month.</li>
+                <li><strong>Description:</strong> Retrieve name-day data for a specific date.</li>
                 <li><strong>Parameters:</strong>
-                    <code class="inline-code">month</code> (string): The name of the month in lowercase (e.g.,
-                    "january"). <code class="inline-code">date</code> (string): The day of the month as a number (e.g.,
-                    "1").
+                    <code class="inline-code">month</code>, <code class="inline-code">date</code>
                 </li>
                 <li><strong>Example Request:</strong>
                     <div class="code-block">
                         <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/january/1">https://nameday-b9bd663a9ed7.herokuapp.com/january/1</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"hu"</span>: [<span class="code-attr-value">"Fruzsina"</span>],<br>
-&nbsp;&nbsp;<span class="code-attr-name">"pl"</span>: [<span class="code-attr-value">"Mieczysław"</span>, <span class="code-attr-value">"Mieczysława"</span>, <span class="code-attr-value">"Mieszko"</span>]<br>
-}
+<a class="code-attr-name" target="_blank"
+    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1">https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1
+</a>
                         </code>
                     </div>
                 </li>
             </ul>
         </div>
 
+        <!-- MONTH + DATE + COUNTRY -->
         <div class="block-wrapper">
             <h3>Get Name Days by Month, Date, and Country</h3>
             <ul>
                 <li><strong>Endpoint:</strong> <code class="inline-code">/:month/:date/:country</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for a specific day within a month and a
-                    specific
-                    country.</li>
-                <li><strong>Parameters:</strong>
-                    <code class="inline-code">month</code> (string), <code class="inline-code">date</code> (string),
-                    <code class="inline-code">country</code> (string).
-                </li>
+                <li><strong>Description:</strong> Retrieve name-day data for a specific country.</li>
+                <li><strong>Supported countries:</strong> <code class="inline-code">hu</code>, <code
+                        class="inline-code">pl</code></li>
                 <li><strong>Example Request:</strong>
                     <div class="code-block">
                         <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/january/1/hu">https://nameday-b9bd663a9ed7.herokuapp.com/january/1/hu</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-[<span class="code-attr-value">"Fruzsina"</span>]
+<a class="code-attr-name" target="_blank"
+    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1/hu">https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1/hu
+</a>
                         </code>
                     </div>
                 </li>
             </ul>
         </div>
 
-        <h2>3. Response Format</h2>
+        <!-- HEALTH -->
+        <div class="block-wrapper">
+            <h3>Health Check</h3>
+            <ul>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/health</code></li>
+                <li><strong>Method:</strong> GET</li>
+                <li><strong>Description:</strong> Verify API availability.</li>
+            </ul>
+            <div class="code-block">
+                <code>
+{<br>
+&nbsp;&nbsp;<span class="code-attr-name">"status"</span>: <span class="code-attr-value">"ok"</span><br>
+}
+                </code>
+            </div>
+        </div>
+
+        <h2>3. Error Handling</h2>
         <p>
-            All responses are in JSON format. Successful responses return data corresponding to the requested
-            parameters.
+            If data cannot be found for the requested parameters, the API returns a <strong>404 Not Found</strong>
+            response.
         </p>
+
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
@@ -169,33 +159,19 @@
             </div>
         </div>
 
-        <h2>Error Handling</h2>
-        <p>
-            The API will return appropriate HTTP status codes and error messages for invalid requests.
-        </p>
-        <ul>
-            <li><strong>400 Bad Request:</strong> Invalid request format or parameters.</li>
-            <li><strong>404 Not Found:</strong> Data not found for the requested parameters.</li>
-            <li><strong>500 Internal Server Error:</strong> Unexpected server errors.</li>
-        </ul>
-
-        <h2>Rate Limiting</h2>
-        <p>
-            This API may have rate limiting in place to prevent abuse.
-        </p>
-
         <h2>Contact</h2>
         <p>
-            Thank you for using the Name Day API. If you have any questions or need further assistance, please contact
-            me
-            at <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a>.
+            If you have any questions or suggestions, feel free to contact me at
+            <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a>.
         </p>
     </div>
 
     <footer>
         <p>
             &copy; <span class="year">YYYY</span>
-            <a href="https://karolyhornyak.co.uk" target="_blank" rel="noopener noreferrer">Karoly Hornyak</a>
+            <a href="https://karolyhornyak.co.uk" target="_blank" rel="noopener noreferrer">
+                Karoly Hornyak
+            </a>
         </p>
     </footer>
 </body>
