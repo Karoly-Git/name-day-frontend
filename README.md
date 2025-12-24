@@ -4,7 +4,8 @@ A static frontend documentation site for the **Name Day Backend API**.
 It provides clear, human-readable API documentation with live example links for exploring name-day data for Poland and Hungary.
 
 🔗 Live frontend demo: https://karoly-git.github.io/name-day-frontend/  
-🔗 Backend API: https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+🔗 Backend API: https://name-day-backend-0d74dcea0ed2.herokuapp.com/  
+🔗 Swagger / OpenAPI: https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs
 
 ---
 
@@ -35,6 +36,7 @@ The frontend is intentionally lightweight and framework-free to ensure:
 - Live clickable example requests
 - Syntax-highlighted JSON responses
 - Health check endpoint visibility
+- Swagger / OpenAPI backend documentation
 - Responsive, minimal layout
 - No external dependencies
 
@@ -51,6 +53,20 @@ The frontend is intentionally lightweight and framework-free to ensure:
 Supported countries:
 - Hungary (`hu`)
 - Poland (`pl`)
+
+---
+
+## Swagger / OpenAPI Documentation
+
+The backend API provides interactive Swagger (OpenAPI) documentation.
+
+This interface allows developers to:
+- Explore all available endpoints
+- Inspect request and response schemas
+- Execute API requests directly from the browser
+
+🔗 Swagger UI:  
+https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs
 
 ---
 
@@ -108,7 +124,6 @@ Backend features demonstrated here include:
 
 - Interactive API tester (fetch requests from the browser)
 - Copy-to-clipboard buttons for endpoints
-- OpenAPI / Swagger integration
 - Dark mode toggle
 - Multi-language documentation
 
