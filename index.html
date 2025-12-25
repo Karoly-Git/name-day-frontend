@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Name Day API provides name-day data for Poland and Hungary. Retrieve name days by month, date, and country via a RESTful API." />
+        content="Name Day Backend API provides international name-day data for Poland and Hungary via a RESTful API." />
     <meta name="author" content="Karoly Hornyak" />
 
     <script defer src="./script.js"></script>
@@ -24,60 +24,76 @@
 
     <div class="container">
         <p>
-            Welcome to the Name Day Backend API documentation. This RESTful API provides international name-day data
-            for Poland and Hungary. Name days are traditionally celebrated in many European cultures and are based
-            on historical calendars.
+            The Name Day Backend API is a RESTful service that provides international name-day data
+            by month, date, and country (Poland and Hungary only). It is designed for fast read access,
+            clean routing, and simple deployment.
         </p>
 
-        <!-- SWAGGER -->
-        <h2>Swagger / OpenAPI Documentation</h2>
+        <!-- LINKS -->
+        <h2>Useful Links</h2>
         <div class="block-wrapper">
             <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/api-docs</code></li>
-                <li><strong>Method:</strong> GET</li>
                 <li>
-                    <strong>Description:</strong>
-                    Interactive Swagger UI providing full OpenAPI documentation for all available endpoints.
-                    You can explore routes, view schemas, and execute requests directly from the browser.
+                    <strong>Live frontend demo:</strong>
+                    <a target="_blank" href="https://karoly-git.github.io/name-day-frontend/">
+                        https://karoly-git.github.io/name-day-frontend/
+                    </a>
                 </li>
-                <li><strong>Example:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank"
-   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs">https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs
-</a>
-                </code>
-                    </div>
+                <li>
+                    <strong>Backend API:</strong>
+                    <a target="_blank" href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">
+                        https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+                    </a>
+                </li>
+                <li>
+                    <strong>Swagger / OpenAPI:</strong>
+                    <a target="_blank" href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs">
+                        /api-docs
+                    </a>
                 </li>
             </ul>
         </div>
 
-
+        <!-- BASE -->
         <h2>Base URL</h2>
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
 <a class="code-attr-name" target="_blank"
-    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">
+https://name-day-backend-0d74dcea0ed2.herokuapp.com/
 </a>
+                </code>
+            </div>
+            <p>Base response:</p>
+            <div class="code-block">
+                <code>
+{
+&nbsp;&nbsp;"message": "Name Days API",
+&nbsp;&nbsp;"docs": "/api-docs",
+&nbsp;&nbsp;"version": "v1",
+&nbsp;&nbsp;"basePath": "/api/v1"
+}
                 </code>
             </div>
         </div>
 
+        <!-- API -->
+        <h2>API Endpoints</h2>
 
         <!-- ALL -->
-        <h2>API Endpoints</h2>
         <div class="block-wrapper">
             <h3>Get All Name Days</h3>
             <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/</code></li>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name-day data for all months and supported countries.</li>
-                <li><strong>Example Request:</strong>
+                <li><strong>Description:</strong> Retrieve all name-day data.</li>
+                <li><strong>Example:</strong>
                     <div class="code-block">
                         <code>
 <a class="code-attr-name" target="_blank"
-    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays">
+/api/v1/namedays
 </a>
                         </code>
                     </div>
@@ -89,17 +105,17 @@
         <div class="block-wrapper">
             <h3>Get Name Days by Month</h3>
             <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/:month</code></li>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays/:month</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name-day data for a specific month.</li>
                 <li><strong>Parameter:</strong>
-                    <code class="inline-code">month</code> — lowercase month name (e.g. <em>january</em>)
+                    <code class="inline-code">month</code> — lowercase month name
                 </li>
-                <li><strong>Example Request:</strong>
+                <li><strong>Example:</strong>
                     <div class="code-block">
                         <code>
 <a class="code-attr-name" target="_blank"
-    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/january">https://name-day-backend-0d74dcea0ed2.herokuapp.com/january
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january">
+/api/v1/namedays/january
 </a>
                         </code>
                     </div>
@@ -107,21 +123,22 @@
             </ul>
         </div>
 
-        <!-- MONTH + DATE -->
+        <!-- DATE -->
         <div class="block-wrapper">
             <h3>Get Name Days by Month and Date</h3>
             <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/:month/:date</code></li>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays/:month/:date</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name-day data for a specific date.</li>
                 <li><strong>Parameters:</strong>
-                    <code class="inline-code">month</code>, <code class="inline-code">date</code>
+                    <code class="inline-code">month</code>,
+                    <code class="inline-code">date</code>
                 </li>
-                <li><strong>Example Request:</strong>
+                <li><strong>Example:</strong>
                     <div class="code-block">
                         <code>
 <a class="code-attr-name" target="_blank"
-    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1">https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january/1">
+/api/v1/namedays/january/1
 </a>
                         </code>
                     </div>
@@ -129,20 +146,24 @@
             </ul>
         </div>
 
-        <!-- MONTH + DATE + COUNTRY -->
+        <!-- COUNTRY -->
         <div class="block-wrapper">
             <h3>Get Name Days by Month, Date, and Country</h3>
             <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/:month/:date/:country</code></li>
+                <li><strong>Endpoint:</strong>
+                    <code class="inline-code">/api/v1/namedays/:month/:date/:country</code>
+                </li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name-day data for a specific country.</li>
-                <li><strong>Supported countries:</strong> <code class="inline-code">hu</code>, <code
-                        class="inline-code">pl</code></li>
-                <li><strong>Example Request:</strong>
+                <li><strong>Supported countries:</strong>
+                    <code class="inline-code">pl</code>,
+                    <code class="inline-code">hu</code>
+                </li>
+                <li><strong>Example:</strong>
                     <div class="code-block">
                         <code>
 <a class="code-attr-name" target="_blank"
-    href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1/hu">https://name-day-backend-0d74dcea0ed2.herokuapp.com/january/1/hu
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january/1/pl">
+/api/v1/namedays/january/1/pl
 </a>
                         </code>
                     </div>
@@ -156,37 +177,38 @@
             <ul>
                 <li><strong>Endpoint:</strong> <code class="inline-code">/health</code></li>
                 <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Verify API availability.</li>
             </ul>
             <div class="code-block">
                 <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"status"</span>: <span class="code-attr-value">"ok"</span><br>
+{
+&nbsp;&nbsp;"status": "ok"
 }
                 </code>
             </div>
         </div>
 
+        <!-- ERRORS -->
         <h2>Error Handling</h2>
         <p>
-            If data cannot be found for the requested parameters, the API returns a <strong>404 Not Found</strong>
-            response.
+            Invalid or unavailable data returns a <strong>404 Not Found</strong> response.
         </p>
-
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"error"</span>: <span class="code-attr-value">"Data not found"</span><br>
+{
+&nbsp;&nbsp;"error": "Data not found"
 }
                 </code>
             </div>
         </div>
 
+        <!-- CONTACT -->
         <h2>Contact</h2>
         <p>
-            If you have any questions or suggestions, feel free to contact me at
-            <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a>.
+            Author: <strong>Karoly Hornyak</strong><br>
+            Full-Stack Web Developer<br>
+            <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a><br>
+            <a href="https://karolyhornyak.co.uk" target="_blank">https://karolyhornyak.co.uk</a>
         </p>
     </div>
 
