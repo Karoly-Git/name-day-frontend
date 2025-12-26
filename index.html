@@ -2,53 +2,31 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="description"
-        content="Terms of Service for the Name Day API. This document explains usage rules, rate limits, caching, and disclaimers." />
+        content="Terms of Service for the Name Day API. This document explains usage rules, rate limiting, caching, and disclaimers." />
     <meta name="author" content="Karoly Hornyak" />
 
-    <!-- Keep your existing assets to preserve the same look & behavior (e.g. year in footer) -->
     <script defer src="./script.js"></script>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
     <title>Name Day API Terms of Service</title>
-=======
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Name Day Backend API provides international name-day data for Poland and Hungary via a RESTful API." />
-    <meta name="author" content="Karoly Hornyak" />
-
-    <script defer src="./script.js"></script>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-
-    <title>Name Day Backend API Documentation</title>
->>>>>>> b280080978a22bff24785ed6185681a84757d50b
 </head>
 
 <body>
     <header>
-<<<<<<< HEAD
         <h1>Name Day API Terms of Service</h1>
-=======
-        <h1>Name Day Backend API Documentation</h1>
->>>>>>> b280080978a22bff24785ed6185681a84757d50b
     </header>
 
     <div class="container">
         <p>
-<<<<<<< HEAD
             These Terms of Service ("Terms") govern your access to and use of the Name Day API ("API", "Service").
             By accessing or using the Service, you agree to be bound by these Terms.
-            If you do not agree, do not use the Service.
+            If you do not agree to these Terms, you must not use the Service.
         </p>
 
         <h2>1. Effective Date</h2>
@@ -58,187 +36,29 @@
 
         <h2>2. About the Service</h2>
         <p>
-            The Name Day API provides name day data for supported countries (currently Hungary and Poland).
-            Name days are cultural observances and may vary by source.
+            The Name Day API provides name day data for supported countries, currently Hungary (<code>hu</code>)
+            and Poland (<code>pl</code>).
+            Name day information is provided for informational purposes only and may vary by source.
         </p>
 
         <h2>3. Base Path and Endpoints</h2>
         <p>
             The Service is available under the following base path:
         </p>
-=======
-            The Name Day Backend API is a RESTful service that provides international name-day data
-            by month, date, and country (Poland and Hungary only). It is designed for fast read access,
-            clean routing, and simple deployment.
-        </p>
 
-        <!-- LINKS -->
-        <h2>Useful Links</h2>
-        <div class="block-wrapper">
-            <ul>
-                <li>
-                    <strong>Live frontend demo:</strong>
-                    <a target="_blank" href="https://karoly-git.github.io/name-day-frontend/">
-                        https://karoly-git.github.io/name-day-frontend/
-                    </a>
-                </li>
-                <li>
-                    <strong>Backend API:</strong>
-                    <a target="_blank" href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">
-                        https://name-day-backend-0d74dcea0ed2.herokuapp.com/
-                    </a>
-                </li>
-                <li>
-                    <strong>Swagger / OpenAPI:</strong>
-                    <a target="_blank" href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs">
-                        /api-docs
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- BASE -->
-        <h2>Base URL</h2>
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
 <a class="code-attr-name" target="_blank"
-   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">
-https://name-day-backend-0d74dcea0ed2.herokuapp.com/
-</a>
-                </code>
-            </div>
-            <p>Base response:</p>
-            <div class="code-block">
-                <code>
-{
-&nbsp;&nbsp;"message": "Name Days API",
-&nbsp;&nbsp;"docs": "/api-docs",
-&nbsp;&nbsp;"version": "v1",
-&nbsp;&nbsp;"basePath": "/api/v1"
-}
+   href="https://nameday-b9bd663a9ed7.herokuapp.com/api/v1">https://nameday-b9bd663a9ed7.herokuapp.com/api/v1</a>
                 </code>
             </div>
         </div>
 
-        <!-- API -->
-        <h2>API Endpoints</h2>
-
-        <!-- ALL -->
-        <div class="block-wrapper">
-            <h3>Get All Name Days</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays</code></li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve all name-day data.</li>
-                <li><strong>Example:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank"
-   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays">
-/api/v1/namedays
-</a>
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- MONTH -->
-        <div class="block-wrapper">
-            <h3>Get Name Days by Month</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays/:month</code></li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Parameter:</strong>
-                    <code class="inline-code">month</code> — lowercase month name
-                </li>
-                <li><strong>Example:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank"
-   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january">
-/api/v1/namedays/january
-</a>
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- DATE -->
-        <div class="block-wrapper">
-            <h3>Get Name Days by Month and Date</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays/:month/:date</code></li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Parameters:</strong>
-                    <code class="inline-code">month</code>,
-                    <code class="inline-code">date</code>
-                </li>
-                <li><strong>Example:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank"
-   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january/1">
-/api/v1/namedays/january/1
-</a>
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- COUNTRY -->
-        <div class="block-wrapper">
-            <h3>Get Name Days by Month, Date, and Country</h3>
-            <ul>
-                <li><strong>Endpoint:</strong>
-                    <code class="inline-code">/api/v1/namedays/:month/:date/:country</code>
-                </li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Supported countries:</strong>
-                    <code class="inline-code">pl</code>,
-                    <code class="inline-code">hu</code>
-                </li>
-                <li><strong>Example:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank"
-   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january/1/pl">
-/api/v1/namedays/january/1/pl
-</a>
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- HEALTH -->
->>>>>>> b280080978a22bff24785ed6185681a84757d50b
-        <div class="block-wrapper">
-            <h3>Health Check</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/health</code></li>
-                <li><strong>Method:</strong> GET</li>
-            </ul>
-            <div class="code-block">
-                <code>
-<<<<<<< HEAD
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays">https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays</a>
-=======
-{
-&nbsp;&nbsp;"status": "ok"
-}
->>>>>>> b280080978a22bff24785ed6185681a84757d50b
-                </code>
-            </div>
-        </div>
-
-<<<<<<< HEAD
         <p>
-            The API supports the following routes:
+            The following endpoints are provided:
         </p>
+
         <ul>
             <li>
                 <strong>GET</strong>
@@ -269,49 +89,35 @@ https://name-day-backend-0d74dcea0ed2.herokuapp.com/
 
         <h2>4. Acceptable Use</h2>
         <ul>
-            <li>You may use the Service for personal, educational, or commercial applications, subject to these Terms.
-            </li>
-            <li>You must not attempt to disrupt, overload, probe, scan, or test the vulnerability of the Service.</li>
-            <li>You must not use the Service for unlawful purposes or in violation of applicable laws.</li>
-            <li>You must not misrepresent the Service as your own or imply endorsement by the Service owner.</li>
+            <li>You may use the Service for personal, educational, or commercial purposes.</li>
+            <li>You must not attempt to disrupt, overload, or interfere with the Service.</li>
+            <li>You must not use the Service for unlawful activities or in violation of applicable laws.</li>
+            <li>You must not misrepresent the Service or imply endorsement by the Service owner.</li>
         </ul>
 
         <h2>5. Rate Limiting</h2>
         <p>
-            To protect the Service from abuse and ensure fair usage, requests may be rate-limited.
-            The current limit is configured as:
+            To ensure fair usage and protect the Service from abuse, rate limiting is applied to all API v1 routes.
         </p>
-        <div class="block-wrapper">
-            <div class="code-block">
-                <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"window"</span>: <span class="code-attr-value">"15 minutes"</span>,<br>
-&nbsp;&nbsp;<span class="code-attr-name">"max_requests"</span>: <span class="code-attr-value">300</span>,<br>
-&nbsp;&nbsp;<span class="code-attr-name">"message_on_limit"</span>: { <span class="code-attr-name">"error"</span>: <span class="code-attr-value">"Too many requests, please try again later."</span> }<br>
-}
-                </code>
-            </div>
-        </div>
-        <p>
-            These limits may change without notice as the Service evolves.
-=======
-        <!-- ERRORS -->
-        <h2>Error Handling</h2>
-        <p>
-            Invalid or unavailable data returns a <strong>404 Not Found</strong> response.
->>>>>>> b280080978a22bff24785ed6185681a84757d50b
-        </p>
+
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
 {
-&nbsp;&nbsp;"error": "Data not found"
+  "window": "15 minutes",
+  "max_requests": 300,
+  "message_on_limit": {
+    "error": "Too many requests, please try again later."
+  }
 }
                 </code>
             </div>
         </div>
 
-<<<<<<< HEAD
+        <p>
+            Rate limits may be adjusted at any time without prior notice.
+        </p>
+
         <h2>6. Caching</h2>
         <p>
             Responses may be cached to improve performance and reduce load.
@@ -323,49 +129,41 @@ https://name-day-backend-0d74dcea0ed2.herokuapp.com/
         <h2>7. Availability and Changes</h2>
         <ul>
             <li>The Service is provided on an “as-is” and “as-available” basis.</li>
-            <li>We do not guarantee uptime, response times, or uninterrupted access.</li>
-            <li>We may modify, suspend, or discontinue the Service (in whole or part) at any time.</li>
+            <li>We do not guarantee uptime, availability, or uninterrupted access.</li>
+            <li>The Service may be modified, suspended, or discontinued at any time.</li>
         </ul>
 
         <h2>8. Data Accuracy</h2>
         <p>
-            Name day information is provided for convenience and may be incomplete, inaccurate, or differ from other
-            calendars or sources. You are responsible for verifying any information before relying on it.
+            While reasonable efforts are made to provide accurate information,
+            name day data may be incomplete, outdated, or inconsistent with other sources.
+            You are responsible for verifying any information obtained from the Service.
         </p>
 
         <h2>9. Disclaimer of Warranties</h2>
         <p>
-            To the fullest extent permitted by law, we disclaim all warranties, express or implied, including but not
-            limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+            To the fullest extent permitted by law, the Service is provided without warranties of any kind,
+            whether express or implied, including implied warranties of merchantability,
+            fitness for a particular purpose, and non-infringement.
         </p>
 
         <h2>10. Limitation of Liability</h2>
         <p>
-            To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, special,
-            consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or
-            indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of (or
-            inability to use) the Service.
+            To the fullest extent permitted by law, the Service owner shall not be liable for any indirect,
+            incidental, special, consequential, or punitive damages arising out of or related to your use
+            of or inability to use the Service.
         </p>
 
         <h2>11. Termination</h2>
         <p>
-            We may suspend or terminate access to the Service at any time if we reasonably believe you have violated
-            these Terms or are using the Service in a way that could cause harm, disruption, or legal risk.
+            Access to the Service may be suspended or terminated at any time if these Terms are violated
+            or if continued use poses a risk to the Service or other users.
         </p>
 
         <h2>12. Contact</h2>
         <p>
-            If you have questions about these Terms, contact:
+            If you have questions about these Terms, please contact:
             <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a>.
-=======
-        <!-- CONTACT -->
-        <h2>Contact</h2>
-        <p>
-            Author: <strong>Karoly Hornyak</strong><br>
-            Full-Stack Web Developer<br>
-            <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a><br>
-            <a href="https://karolyhornyak.co.uk" target="_blank">https://karolyhornyak.co.uk</a>
->>>>>>> b280080978a22bff24785ed6185681a84757d50b
         </p>
     </div>
 
