@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,15 +17,35 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
     <title>Name Day API Terms of Service</title>
+=======
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Name Day Backend API provides international name-day data for Poland and Hungary via a RESTful API." />
+    <meta name="author" content="Karoly Hornyak" />
+
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <title>Name Day Backend API Documentation</title>
+>>>>>>> b280080978a22bff24785ed6185681a84757d50b
 </head>
 
 <body>
     <header>
+<<<<<<< HEAD
         <h1>Name Day API Terms of Service</h1>
+=======
+        <h1>Name Day Backend API Documentation</h1>
+>>>>>>> b280080978a22bff24785ed6185681a84757d50b
     </header>
 
     <div class="container">
         <p>
+<<<<<<< HEAD
             These Terms of Service ("Terms") govern your access to and use of the Name Day API ("API", "Service").
             By accessing or using the Service, you agree to be bound by these Terms.
             If you do not agree, do not use the Service.
@@ -45,14 +66,176 @@
         <p>
             The Service is available under the following base path:
         </p>
+=======
+            The Name Day Backend API is a RESTful service that provides international name-day data
+            by month, date, and country (Poland and Hungary only). It is designed for fast read access,
+            clean routing, and simple deployment.
+        </p>
+
+        <!-- LINKS -->
+        <h2>Useful Links</h2>
+        <div class="block-wrapper">
+            <ul>
+                <li>
+                    <strong>Live frontend demo:</strong>
+                    <a target="_blank" href="https://karoly-git.github.io/name-day-frontend/">
+                        https://karoly-git.github.io/name-day-frontend/
+                    </a>
+                </li>
+                <li>
+                    <strong>Backend API:</strong>
+                    <a target="_blank" href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">
+                        https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+                    </a>
+                </li>
+                <li>
+                    <strong>Swagger / OpenAPI:</strong>
+                    <a target="_blank" href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs">
+                        /api-docs
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- BASE -->
+        <h2>Base URL</h2>
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays">https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays</a>
+<a class="code-attr-name" target="_blank"
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/">
+https://name-day-backend-0d74dcea0ed2.herokuapp.com/
+</a>
+                </code>
+            </div>
+            <p>Base response:</p>
+            <div class="code-block">
+                <code>
+{
+&nbsp;&nbsp;"message": "Name Days API",
+&nbsp;&nbsp;"docs": "/api-docs",
+&nbsp;&nbsp;"version": "v1",
+&nbsp;&nbsp;"basePath": "/api/v1"
+}
                 </code>
             </div>
         </div>
 
+        <!-- API -->
+        <h2>API Endpoints</h2>
+
+        <!-- ALL -->
+        <div class="block-wrapper">
+            <h3>Get All Name Days</h3>
+            <ul>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays</code></li>
+                <li><strong>Method:</strong> GET</li>
+                <li><strong>Description:</strong> Retrieve all name-day data.</li>
+                <li><strong>Example:</strong>
+                    <div class="code-block">
+                        <code>
+<a class="code-attr-name" target="_blank"
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays">
+/api/v1/namedays
+</a>
+                        </code>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MONTH -->
+        <div class="block-wrapper">
+            <h3>Get Name Days by Month</h3>
+            <ul>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays/:month</code></li>
+                <li><strong>Method:</strong> GET</li>
+                <li><strong>Parameter:</strong>
+                    <code class="inline-code">month</code> — lowercase month name
+                </li>
+                <li><strong>Example:</strong>
+                    <div class="code-block">
+                        <code>
+<a class="code-attr-name" target="_blank"
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january">
+/api/v1/namedays/january
+</a>
+                        </code>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- DATE -->
+        <div class="block-wrapper">
+            <h3>Get Name Days by Month and Date</h3>
+            <ul>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/api/v1/namedays/:month/:date</code></li>
+                <li><strong>Method:</strong> GET</li>
+                <li><strong>Parameters:</strong>
+                    <code class="inline-code">month</code>,
+                    <code class="inline-code">date</code>
+                </li>
+                <li><strong>Example:</strong>
+                    <div class="code-block">
+                        <code>
+<a class="code-attr-name" target="_blank"
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january/1">
+/api/v1/namedays/january/1
+</a>
+                        </code>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- COUNTRY -->
+        <div class="block-wrapper">
+            <h3>Get Name Days by Month, Date, and Country</h3>
+            <ul>
+                <li><strong>Endpoint:</strong>
+                    <code class="inline-code">/api/v1/namedays/:month/:date/:country</code>
+                </li>
+                <li><strong>Method:</strong> GET</li>
+                <li><strong>Supported countries:</strong>
+                    <code class="inline-code">pl</code>,
+                    <code class="inline-code">hu</code>
+                </li>
+                <li><strong>Example:</strong>
+                    <div class="code-block">
+                        <code>
+<a class="code-attr-name" target="_blank"
+   href="https://name-day-backend-0d74dcea0ed2.herokuapp.com/api/v1/namedays/january/1/pl">
+/api/v1/namedays/january/1/pl
+</a>
+                        </code>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- HEALTH -->
+>>>>>>> b280080978a22bff24785ed6185681a84757d50b
+        <div class="block-wrapper">
+            <h3>Health Check</h3>
+            <ul>
+                <li><strong>Endpoint:</strong> <code class="inline-code">/health</code></li>
+                <li><strong>Method:</strong> GET</li>
+            </ul>
+            <div class="code-block">
+                <code>
+<<<<<<< HEAD
+<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays">https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays</a>
+=======
+{
+&nbsp;&nbsp;"status": "ok"
+}
+>>>>>>> b280080978a22bff24785ed6185681a84757d50b
+                </code>
+            </div>
+        </div>
+
+<<<<<<< HEAD
         <p>
             The API supports the following routes:
         </p>
@@ -111,8 +294,24 @@
         </div>
         <p>
             These limits may change without notice as the Service evolves.
+=======
+        <!-- ERRORS -->
+        <h2>Error Handling</h2>
+        <p>
+            Invalid or unavailable data returns a <strong>404 Not Found</strong> response.
+>>>>>>> b280080978a22bff24785ed6185681a84757d50b
         </p>
+        <div class="block-wrapper">
+            <div class="code-block">
+                <code>
+{
+&nbsp;&nbsp;"error": "Data not found"
+}
+                </code>
+            </div>
+        </div>
 
+<<<<<<< HEAD
         <h2>6. Caching</h2>
         <p>
             Responses may be cached to improve performance and reduce load.
@@ -158,13 +357,24 @@
         <p>
             If you have questions about these Terms, contact:
             <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a>.
+=======
+        <!-- CONTACT -->
+        <h2>Contact</h2>
+        <p>
+            Author: <strong>Karoly Hornyak</strong><br>
+            Full-Stack Web Developer<br>
+            <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a><br>
+            <a href="https://karolyhornyak.co.uk" target="_blank">https://karolyhornyak.co.uk</a>
+>>>>>>> b280080978a22bff24785ed6185681a84757d50b
         </p>
     </div>
 
     <footer>
         <p>
             &copy; <span class="year">YYYY</span>
-            <a href="https://karolyhornyak.co.uk" target="_blank" rel="noopener noreferrer">Karoly Hornyak</a>
+            <a href="https://karolyhornyak.co.uk" target="_blank" rel="noopener noreferrer">
+                Karoly Hornyak
+            </a>
         </p>
     </footer>
 </body>
