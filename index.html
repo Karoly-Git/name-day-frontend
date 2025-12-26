@@ -2,193 +2,162 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta name="description"
-        content="Name Day API provides name day data for various months of Hungary and Poland. Easily retrieve information using this API." />
+        content="Terms of Service for the Name Day API. This document explains usage rules, rate limits, caching, and disclaimers." />
     <meta name="author" content="Karoly Hornyak" />
+
+    <!-- Keep your existing assets to preserve the same look & behavior (e.g. year in footer) -->
     <script defer src="./script.js"></script>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <title>Name Day API Documentation</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <title>Name Day API Terms of Service</title>
 </head>
 
 <body>
     <header>
-        <h1>Name Day API Documentation</h1>
+        <h1>Name Day API Terms of Service</h1>
     </header>
 
     <div class="container">
         <p>
-            Welcome to the Name Day API documentation. This API provides name day data for various months of Hungary and
-            Poland.
-            Name days are special days in some cultures where individuals celebrate their given names based on a
-            calendar of saints or historical figures.
+            These Terms of Service ("Terms") govern your access to and use of the Name Day API ("API", "Service").
+            By accessing or using the Service, you agree to be bound by these Terms.
+            If you do not agree, do not use the Service.
         </p>
 
-        <h2>1. Base URL</h2>
-        <div class="block-wrapper">
-            <div class="code-block">
-                <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/">https://nameday-b9bd663a9ed7.herokuapp.com/</a>
-                </code>
-            </div>
-        </div>
-
-        <h2>2. Endpoints</h2>
-
-        <div class="block-wrapper">
-            <h3>Get All Name Days</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/</code></li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for all months and countries.</li>
-                <li><strong>Example Request:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/">https://nameday-b9bd663a9ed7.herokuapp.com/</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"january"</span>: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr-name">"1"</span>: { <span class="code-attr-name">"hu"</span>: [<span class="code-attr-value">"Fruzsina"</span>], <span class="code-attr-name">"pl"</span>: [<span class="code-attr-value">"Mieczysław"</span>, <span class="code-attr-value">"Mieczysława"</span>, <span class="code-attr-value">"Mieszko"</span>] },<br>
-&nbsp;&nbsp;&nbsp;&nbsp;...<br>
-&nbsp;&nbsp;}<br>
-}
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="block-wrapper">
-            <h3>Get Name Days by Month</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/:month</code></li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for a specific month.</li>
-                <li><strong>Parameters:</strong> <code class="inline-code">month</code> (string): The name of the month
-                    in lowercase (e.g., "january").</li>
-                <li><strong>Example Request:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/january">https://nameday-b9bd663a9ed7.herokuapp.com/january</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"1"</span>: { <span class="code-attr-name">"hu"</span>: [<span class="code-attr-value">"Fruzsina"</span>], <span class="code-attr-name">"pl"</span>: [<span class="code-attr-value">"Mieczysław"</span>, <span class="code-attr-value">"Mieczysława"</span>, <span class="code-attr-value">"Mieszko"</span>] },<br>
-&nbsp;&nbsp;...<br>
-}
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="block-wrapper">
-            <h3>Get Name Days by Month and Date</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/:month/:date</code></li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for a specific day within a month.</li>
-                <li><strong>Parameters:</strong>
-                    <code class="inline-code">month</code> (string): The name of the month in lowercase (e.g.,
-                    "january"). <code class="inline-code">date</code> (string): The day of the month as a number (e.g.,
-                    "1").
-                </li>
-                <li><strong>Example Request:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/january/1">https://nameday-b9bd663a9ed7.herokuapp.com/january/1</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"hu"</span>: [<span class="code-attr-value">"Fruzsina"</span>],<br>
-&nbsp;&nbsp;<span class="code-attr-name">"pl"</span>: [<span class="code-attr-value">"Mieczysław"</span>, <span class="code-attr-value">"Mieczysława"</span>, <span class="code-attr-value">"Mieszko"</span>]<br>
-}
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="block-wrapper">
-            <h3>Get Name Days by Month, Date, and Country</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> <code class="inline-code">/:month/:date/:country</code></li>
-                <li><strong>Method:</strong> GET</li>
-                <li><strong>Description:</strong> Retrieve name day data for a specific day within a month and a
-                    specific
-                    country.</li>
-                <li><strong>Parameters:</strong>
-                    <code class="inline-code">month</code> (string), <code class="inline-code">date</code> (string),
-                    <code class="inline-code">country</code> (string).
-                </li>
-                <li><strong>Example Request:</strong>
-                    <div class="code-block">
-                        <code>
-<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/january/1/hu">https://nameday-b9bd663a9ed7.herokuapp.com/january/1/hu</a>
-                        </code>
-                    </div>
-                </li>
-                <li><strong>Example Response:</strong>
-                    <div class="code-block">
-                        <code>
-[<span class="code-attr-value">"Fruzsina"</span>]
-                        </code>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <h2>3. Response Format</h2>
+        <h2>1. Effective Date</h2>
         <p>
-            All responses are in JSON format. Successful responses return data corresponding to the requested
-            parameters.
+            These Terms are effective as of <strong>December 26, 2025</strong>.
+        </p>
+
+        <h2>2. About the Service</h2>
+        <p>
+            The Name Day API provides name day data for supported countries (currently Hungary and Poland).
+            Name days are cultural observances and may vary by source.
+        </p>
+
+        <h2>3. Base Path and Endpoints</h2>
+        <p>
+            The Service is available under the following base path:
         </p>
         <div class="block-wrapper">
             <div class="code-block">
                 <code>
-{<br>
-&nbsp;&nbsp;<span class="code-attr-name">"error"</span>: <span class="code-attr-value">"Data not found"</span><br>
-}
+<a class="code-attr-name" target="_blank" href="https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays">https://nameday-b9bd663a9ed7.herokuapp.com/api/v1/namedays</a>
                 </code>
             </div>
         </div>
 
-        <h2>Error Handling</h2>
         <p>
-            The API will return appropriate HTTP status codes and error messages for invalid requests.
+            The API supports the following routes:
         </p>
         <ul>
-            <li><strong>400 Bad Request:</strong> Invalid request format or parameters.</li>
-            <li><strong>404 Not Found:</strong> Data not found for the requested parameters.</li>
-            <li><strong>500 Internal Server Error:</strong> Unexpected server errors.</li>
+            <li>
+                <strong>GET</strong>
+                <code class="inline-code">/api/v1/namedays/api-docs</code>
+                — OpenAPI documentation (Swagger UI)
+            </li>
+            <li>
+                <strong>GET</strong>
+                <code class="inline-code">/api/v1/namedays</code>
+                — all data
+            </li>
+            <li>
+                <strong>GET</strong>
+                <code class="inline-code">/api/v1/namedays/:month</code>
+                — month data
+            </li>
+            <li>
+                <strong>GET</strong>
+                <code class="inline-code">/api/v1/namedays/:month/:date</code>
+                — specific day data
+            </li>
+            <li>
+                <strong>GET</strong>
+                <code class="inline-code">/api/v1/namedays/:month/:date/:country</code>
+                — specific country data
+            </li>
         </ul>
 
-        <h2>Rate Limiting</h2>
+        <h2>4. Acceptable Use</h2>
+        <ul>
+            <li>You may use the Service for personal, educational, or commercial applications, subject to these Terms.
+            </li>
+            <li>You must not attempt to disrupt, overload, probe, scan, or test the vulnerability of the Service.</li>
+            <li>You must not use the Service for unlawful purposes or in violation of applicable laws.</li>
+            <li>You must not misrepresent the Service as your own or imply endorsement by the Service owner.</li>
+        </ul>
+
+        <h2>5. Rate Limiting</h2>
         <p>
-            This API may have rate limiting in place to prevent abuse.
+            To protect the Service from abuse and ensure fair usage, requests may be rate-limited.
+            The current limit is configured as:
+        </p>
+        <div class="block-wrapper">
+            <div class="code-block">
+                <code>
+{<br>
+&nbsp;&nbsp;<span class="code-attr-name">"window"</span>: <span class="code-attr-value">"15 minutes"</span>,<br>
+&nbsp;&nbsp;<span class="code-attr-name">"max_requests"</span>: <span class="code-attr-value">300</span>,<br>
+&nbsp;&nbsp;<span class="code-attr-name">"message_on_limit"</span>: { <span class="code-attr-name">"error"</span>: <span class="code-attr-value">"Too many requests, please try again later."</span> }<br>
+}
+                </code>
+            </div>
+        </div>
+        <p>
+            These limits may change without notice as the Service evolves.
         </p>
 
-        <h2>Contact</h2>
+        <h2>6. Caching</h2>
         <p>
-            Thank you for using the Name Day API. If you have any questions or need further assistance, please contact
-            me
-            at <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a>.
+            Responses may be cached to improve performance and reduce load.
+            Current caching behavior is configured with a default TTL of
+            <strong>60 seconds</strong> on API routes.
+            This means repeated identical requests may return a cached response during the TTL window.
+        </p>
+
+        <h2>7. Availability and Changes</h2>
+        <ul>
+            <li>The Service is provided on an “as-is” and “as-available” basis.</li>
+            <li>We do not guarantee uptime, response times, or uninterrupted access.</li>
+            <li>We may modify, suspend, or discontinue the Service (in whole or part) at any time.</li>
+        </ul>
+
+        <h2>8. Data Accuracy</h2>
+        <p>
+            Name day information is provided for convenience and may be incomplete, inaccurate, or differ from other
+            calendars or sources. You are responsible for verifying any information before relying on it.
+        </p>
+
+        <h2>9. Disclaimer of Warranties</h2>
+        <p>
+            To the fullest extent permitted by law, we disclaim all warranties, express or implied, including but not
+            limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+        </p>
+
+        <h2>10. Limitation of Liability</h2>
+        <p>
+            To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, special,
+            consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or
+            indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of (or
+            inability to use) the Service.
+        </p>
+
+        <h2>11. Termination</h2>
+        <p>
+            We may suspend or terminate access to the Service at any time if we reasonably believe you have violated
+            these Terms or are using the Service in a way that could cause harm, disruption, or legal risk.
+        </p>
+
+        <h2>12. Contact</h2>
+        <p>
+            If you have questions about these Terms, contact:
+            <a id="my-email" href="mailto:karoly.webdev@gmail.com">karoly.webdev@gmail.com</a>.
         </p>
     </div>
 
