@@ -1,137 +1,83 @@
-# Name Day Frontend Documentation
+# Name Day API
 
-A static frontend documentation site for the **Name Day Backend API**.  
-It provides clear, human-readable API documentation with live example links for exploring name-day data for Poland and Hungary.
+The **Name Day API** provides name day information for the entire year, with filtering options by **month**, **date**, and **country**.  
+It currently supports **Hungary (`hu`)** and **Poland (`pl`)**.
 
-🔗 Live frontend demo: https://karoly-git.github.io/name-day-frontend/  
-🔗 Backend API: https://name-day-backend-0d74dcea0ed2.herokuapp.com/  
-🔗 Swagger / OpenAPI: https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs
+The API is versioned, rate-limited, cached, and documented using **OpenAPI (Swagger)**.
 
 ---
 
-## Overview
+## 🌍 Base URL
 
-This project serves as the public-facing documentation for the Name Day Backend API.  
-It explains available endpoints, request formats, and example usage in a simple and accessible way.
+### Production
+```
+https://name-day-backend-0d74dcea0ed2.herokuapp.com
+```
 
-The frontend is intentionally lightweight and framework-free to ensure:
-- fast load times
-- zero build complexity
-- easy hosting via GitHub Pages
-
----
-
-## Tech Stack
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- GitHub Pages (deployment)
-
----
-
-## Features
-
-- Clear API endpoint documentation
-- Live clickable example requests
-- Syntax-highlighted JSON responses
-- Health check endpoint visibility
-- Swagger / OpenAPI backend documentation
-- Responsive, minimal layout
-- No external dependencies
-
----
-
-## Supported API Features
-
-- Retrieve all name days
-- Filter by month
-- Filter by month and date
-- Filter by month, date, and country
-- Health check endpoint
-
-Supported countries:
-- Hungary (`hu`)
-- Poland (`pl`)
-
----
-
-## Swagger / OpenAPI Documentation
-
-The backend API provides interactive Swagger (OpenAPI) documentation.
-
-This interface allows developers to:
-- Explore all available endpoints
-- Inspect request and response schemas
-- Execute API requests directly from the browser
-
-🔗 Swagger UI:  
-https://name-day-backend-0d74dcea0ed2.herokuapp.com/api-docs
-
----
-
-## Project Structure
-
-```text
-.
-├── index.html      # API documentation page
-├── styles.css      # Styling for documentation layout
-├── script.js       # Small helper scripts (e.g. year update)
-├── favicon.ico     # Site favicon
-└── README.md       # Project documentation
+### API Base Path
+```
+/api/v1
 ```
 
 ---
 
-## Local Development
+## 📘 API Documentation (OpenAPI)
 
-This project does not require a build step.
+Interactive API documentation is available via Swagger UI:
 
-To run locally:
-1. Clone the repository
-2. Open `index.html` in your browser
-
-Alternatively, you can use a local server:
-```bash
-npx serve .
+```
+GET /api-docs
 ```
 
 ---
 
-## Deployment
+## 🚀 Endpoints
 
-The frontend is deployed using **GitHub Pages**.
+### Get name day data for the entire year
+```
+GET /api/v1/namedays
+```
 
-- The `main` branch contains the static files
-- Any push to the branch updates the live site automatically
-- No build or CI pipeline required
+### Get name day data by month
+```
+GET /api/v1/namedays/{month}
+```
 
----
+### Get name day data by month and date
+```
+GET /api/v1/namedays/{month}/{date}
+```
 
-## Relationship to Backend
-
-This frontend is designed specifically to document and showcase the **Name Day Backend API**.
-
-Backend features demonstrated here include:
-- RESTful routing
-- Input normalization
-- Error handling
-- Continuous deployment via GitHub and Heroku
-
----
-
-## Future Improvements
-
-- Interactive API tester (fetch requests from the browser)
-- Copy-to-clipboard buttons for endpoints
-- Dark mode toggle
-- Multi-language documentation
+### Get name day data by month, date, and country
+```
+GET /api/v1/namedays/{month}/{date}/{country}
+```
 
 ---
 
-## Author
+## ⚙️ API Behavior
+
+### Rate Limiting
+- 300 requests per IP
+- 15-minute window
+
+### Caching
+- Server-side caching
+- TTL: 60 seconds
+- Cache key: full request URL
+
+---
+
+## 📜 Terms of Service
+
+By using this API, you agree to the Terms of Service:
+
+https://karoly-git.github.io/name-day-frontend/
+
+---
+
+## 👤 Contact
 
 **Karoly Hornyak**  
-Full-Stack Web Developer  
 📧 karoly.webdev@gmail.com  
-🌐 https://karolyhornyak.co.uk/
+🌐 https://karolyhornyak.com
